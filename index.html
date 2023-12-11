@@ -16,6 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
+                <!--immagini con testo-->
                 <div class="item">
                     <img :src="games.images[activeImage]" alt="Spiderman" />
                     <div class="text">
@@ -26,9 +27,12 @@
                     </div>
                 </div>
 
+                <!--thumbs con bottoni e immagini-->
                 <div class="thumbs">
-                    <div class="prev"></div>
+                    <!--bottoni-->
+                    <div class="prev" @click="prevImg"></div>
                     <div class="next"></div>
+                    <!--immagini-->
                     <div class="thumb active">
                         <img src="img/01.webp" alt="Svezia" />
                     </div>
