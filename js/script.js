@@ -73,7 +73,17 @@ createApp({
                 this.activeText = this.games.texts.length - 1;
                 this.activeTitle = this.games.titles.length - 1;
             }
-        }
+        },
+        nextImg() {
+            this.activeImage++;
+            this.activeText++;
+            this.activeTitle++;
+            if(this.activeImage > this.games.images.length - 1 && this.activeText > this.games.texts.length - 1 && this.activeTitle > this.games.titles.length - 1) {
+                this.activeImage = 0;
+                this.activeText = 0;
+                this.activeTitle = 0;
+            }
+        },
     }
     
 }).mount("#app");
