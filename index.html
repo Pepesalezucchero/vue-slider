@@ -18,11 +18,11 @@
 
                 <!--immagini con testo-->
                 <div class="item">
-                    <img :src="games.images[activeImage]" alt="Spiderman" />
+                    <img :src="games[activeImage].image" alt="Spiderman" />
                     <div class="text">
-                        <h3>{{games.titles[activeTitle]}}</h3>
+                        <h3>{{ games[activeImage].title }}</h3>
                         <p>
-                            {{games.texts[activeText]}}
+                            {{ games[activeImage].text }}
                         </p>
                     </div>
                 </div>
@@ -33,20 +33,8 @@
                     <div class="prev" @click="prevImg"></div>
                     <div class="next" @click="nextImg"></div>
                     <!--immagini-->
-                    <div class="thumb active">
-                        <img :src="games.images[0]" alt="Spiderman" />
-                    </div>
-                    <div class="thumb">
-                        <img :src="games.images[1]" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img :src="games.images[2]" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img :src="games.images[3]" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img :src="games.images[4]" alt="Avengers" />
+                    <div class="thumb"  v-for="(thumb, i) in games" :key="i" :class="activeImage === i ? 'active' : '' ">
+                        <img :src="thumb.image" :alt="thumb.title" >
                     </div>
                 </div>
 
